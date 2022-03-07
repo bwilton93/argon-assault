@@ -13,13 +13,35 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float controlPitchFactor = 10f;
     [SerializeField] float controlRollFactor = 10f;
 
+    public ParticleSystem gunLeft;
+    public ParticleSystem gunRight;
+
     float xThrow;
     float yThrow;
-  
+
+    float fireButton;
+
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
         processTranslation();
         processRotation();
+        processFire();
+    }
+
+    void processFire()
+    {
+        fireButton = Input.GetAxis("Fire1");
+
+        if (fireButton > 0)
+        {
+            gunLeft.Play();
+            gunRight.Play();
+        }
     }
 
     void processRotation()

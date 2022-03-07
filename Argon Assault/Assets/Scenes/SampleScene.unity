@@ -199,6 +199,11 @@ Transform:
   m_Father: {fileID: 1486637509}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &202721240 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1477782369122641296, guid: d71c8d98766b2a149af4d0402fdd9b9a, type: 3}
+  m_PrefabInstance: {fileID: 6404724161857578130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203041572
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +635,11 @@ Transform:
 --- !u!95 &963194229 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6404724162774485479, guid: d71c8d98766b2a149af4d0402fdd9b9a, type: 3}
+  m_PrefabInstance: {fileID: 6404724161857578130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1059323936 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1163558880802645326, guid: d71c8d98766b2a149af4d0402fdd9b9a, type: 3}
   m_PrefabInstance: {fileID: 6404724161857578130}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1138200763
@@ -1332,5 +1342,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 6404724163171194872, guid: d71c8d98766b2a149af4d0402fdd9b9a, type: 3}
+      propertyPath: gunLeft
+      value: 
+      objectReference: {fileID: 202721240}
+    - target: {fileID: 6404724163171194872, guid: d71c8d98766b2a149af4d0402fdd9b9a, type: 3}
+      propertyPath: gunRight
+      value: 
+      objectReference: {fileID: 1059323936}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d71c8d98766b2a149af4d0402fdd9b9a, type: 3}
