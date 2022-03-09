@@ -16,6 +16,9 @@ public class PlayerControls : MonoBehaviour
     public ParticleSystem gunLeft;
     public ParticleSystem gunRight;
 
+    bool controlsEnabled;
+    float controlsEnabledTimer = 5f;
+
     float xThrow;
     float yThrow;
 
@@ -23,14 +26,22 @@ public class PlayerControls : MonoBehaviour
 
     private void Start()
     {
-        
+        controlsEnabled = false;
+        StartCoroutine(enableControls(controlsEnabledTimer));
     }
 
     void Update()
     {
-        processTranslation();
-        processRotation();
-        processFire();
+        if (controlsEnabled)
+        {
+            processTranslation();
+            processRotation();
+            processFire();
+        } 
+        else
+        {
+            return;
+        }
     }
 
     void processFire()
@@ -71,5 +82,12 @@ public class PlayerControls : MonoBehaviour
         float clampedYPos = Mathf.Clamp(rawYPos, -yRange, yRange);
 
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z);
+    }
+
+    IEnumerator enableControls(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        Debug.Log("Controls enabled");
+        controlsEnabled = true;
     }
 }
