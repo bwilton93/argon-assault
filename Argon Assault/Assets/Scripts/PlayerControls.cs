@@ -39,8 +39,9 @@ public class PlayerControls : MonoBehaviour
 
         if (fireButton > 0)
         {
-            gunLeft.Play();
-            gunRight.Play();
+            gunLeft.GetComponent<ParticleSystem>().Play();
+            gunRight.GetComponent<ParticleSystem>().Play();
+            Debug.Log("Gun fired");
         }
     }
 
