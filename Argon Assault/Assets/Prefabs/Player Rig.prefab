@@ -165,23 +165,23 @@ PrefabInstance:
     - target: {fileID: 2144563315, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
       propertyPath: gunLeft
       value: 
-      objectReference: {fileID: 5240015038101220566}
+      objectReference: {fileID: 0}
     - target: {fileID: 2144563315, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
       propertyPath: gunRight
       value: 
-      objectReference: {fileID: 1163558880802645326}
+      objectReference: {fileID: 0}
     - target: {fileID: 2144563315, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
       propertyPath: lasers.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2144563315, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
       propertyPath: lasers.Array.data[0]
       value: 
-      objectReference: {fileID: 9169426840332051492}
+      objectReference: {fileID: 0}
     - target: {fileID: 2144563315, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
       propertyPath: lasers.Array.data[1]
       value: 
-      objectReference: {fileID: 2872687879986408892}
+      objectReference: {fileID: 0}
     - target: {fileID: 1819210613620524, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
       propertyPath: m_Name
       value: Player Ship
@@ -233,6 +233,10 @@ PrefabInstance:
     - target: {fileID: 1178363495981714269, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
       propertyPath: looping
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178363495981714269, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
+      propertyPath: TrailModule.lifetime.scalar
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1178363495981714269, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -326,26 +330,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4633660960354252, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
   m_PrefabInstance: {fileID: 6404724162429806475}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9169426840332051492 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2855985370193052591, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
-  m_PrefabInstance: {fileID: 6404724162429806475}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1163558880802645326 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5244419853359727301, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
-  m_PrefabInstance: {fileID: 6404724162429806475}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2872687879986408892 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9169312182034598455, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
-  m_PrefabInstance: {fileID: 6404724162429806475}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &5240015038101220566 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1178363495981714269, guid: 206dc24d514cdd146a07be8e731a56e9, type: 3}
-  m_PrefabInstance: {fileID: 6404724162429806475}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &6404724161857578132
 Animator:
   serializedVersion: 3
@@ -365,3 +349,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1871983529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405332800795842727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff53414aa00ce094d8df94ece6f97cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
