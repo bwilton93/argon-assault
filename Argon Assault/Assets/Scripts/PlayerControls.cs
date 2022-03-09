@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,14 +8,12 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float playerControlSpeed = 40f;
     [SerializeField] float xRange = 21f;
     [SerializeField] float yRange = 12f;
+    [SerializeField] GameObject[] lasers;
 
     [SerializeField] float positionPitchFactor = 2f;
     [SerializeField] float positionYawFactor = 2f;
     [SerializeField] float controlPitchFactor = 10f;
     [SerializeField] float controlRollFactor = 10f;
-
-    public ParticleSystem gunLeft;
-    public ParticleSystem gunRight;
 
     bool controlsEnabled;
     float controlsEnabledTimer = 5f;
@@ -22,11 +21,12 @@ public class PlayerControls : MonoBehaviour
     float xThrow;
     float yThrow;
 
-    float fireButton;
+    bool fireButton;
 
     private void Start()
     {
         controlsEnabled = false;
+        DeactivateLasers();
         StartCoroutine(enableControls(controlsEnabledTimer));
     }
 
@@ -46,13 +46,32 @@ public class PlayerControls : MonoBehaviour
 
     void processFire()
     {
-        fireButton = Input.GetAxis("Fire1");
+        fireButton = Input.GetButton("Fire1");
 
-        if (fireButton > 0)
+        if (fireButton)
         {
-            gunLeft.GetComponent<ParticleSystem>().Play();
-            gunRight.GetComponent<ParticleSystem>().Play();
+            ActivateLasers();
             Debug.Log("Gun fired");
+        }
+        else
+        {
+            DeactivateLasers();
+        }
+    }
+
+    private void ActivateLasers()
+    {
+        foreach (GameObject laser in lasers)
+        {
+            laser.SetActive(true);
+        }
+    }
+
+    private void DeactivateLasers()
+    {
+        foreach (GameObject laser in lasers)
+        {
+            laser.SetActive(false);
         }
     }
 
